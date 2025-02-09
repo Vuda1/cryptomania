@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Vision - Визитка</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #ffffff; /* Белый фон */
+            color: #000000; /* Черный текст */
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #007BFF, #6f42c1); /* Синий + Фиолетовый градиент */
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 5px solid #6f42c1; /* Фиолетовый акцент */
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.01%);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: #ffffff; /* Белый текст */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            opacity: 0.9;
+            color: #ffffff; /* Белый текст */
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 50px 0;
+        }
+
+        .tab-button {
+            background: #ffffff; /* Белый фон */
+            padding: 15px 30px;
+            margin: 0 10px;
+            border: 2px solid #007BFF; /* Синяя рамка */
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            color: #007BFF; /* Синий текст */
+        }
+
+        .tab-button.active {
+            background: #007BFF; /* Синий фон */
+            color: #ffffff; /* Белый текст */
+        }
+
+        .tab-button:hover {
+            transform: translateY(-5px);
+            background: #6f42c1; /* Фиолетовый при наведении */
+            color: #ffffff; /* Белый текст */
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: #ffffff; /* Белый фон */
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 2px solid #007BFF; /* Синяя рамка */
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .accordion {
+            margin: 50px 0;
+        }
+
+        .accordion-item {
+            background: #ffffff; /* Белый фон */
+            margin: 10px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #007BFF; /* Синяя рамка */
+        }
+
+        .accordion-header {
+            padding: 20px;
+            background: #007BFF; /* Синий фон */
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff; /* Белый текст */
+        }
+
+        .accordion-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .accordion-content p {
+            padding: 20px 0;
+            color: #000000; /* Черный текст */
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 200px;
+        }
+
+        footer {
+            background: #007BFF; /* Синий фон */
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 5px solid #6f42c1; /* Фиолетовый акцент */
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.01%);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab-button {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container hero">
+            <h1>Crypto Vision</h1>
+            <p>Ваш проводник в мире криптовалют</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="tabs">
+            <div class="tab-button active" data-tab="about">О нас</div>
+            <div class="tab-button" data-tab="services">Услуги</div>
+            <div class="tab-button" data-tab="contact">Контакты</div>
+        </section>
+
+        <section class="tab-content active" id="about">
+            <h2>О нас</h2>
+            <p>Мы — команда профессионалов, помогающая вам разобраться в мире криптовалют. Наши курсы и консультации помогут вам стать экспертом в этой области.</p>
+        </section>
+
+        <section class="tab-content" id="services">
+            <h2>Услуги</h2>
+            <p>Мы предлагаем широкий спектр услуг, включая обучение, консультации и аналитику. Наши клиенты всегда остаются довольны результатом.</p>
+        </section>
+
+        <section class="tab-content" id="contact">
+            <h2>Контакты</h2>
+            <p>Свяжитесь с нами по email: info@cryptovision.com или через Telegram: @crypto_support.</p>
+        </section>
+
+        <section class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>Кто мы?</h3>
+                    <span>▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Мы — команда профессионалов, помогающая вам разобраться в мире криптовалют.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>Что мы предлагаем?</h3>
+                    <span>▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Мы предлагаем широкий спектр услуг, включая обучение, консультации и аналитику.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>Как с нами связаться?</h3>
+                    <span>▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Свяжитесь с нами по email: info@cryptovision.com или через Telegram: @crypto_support.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Crypto Vision</p>
+            <p>Контакты: info@cryptovision.com | Telegram: @crypto_support</p>
+        </div>
+    </footer>
+
+    <script>
+        // Табы
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                button.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Аккордеон
+        const accordionItems = document.querySelectorAll('.accordion-item');
+
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+
+            header.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
